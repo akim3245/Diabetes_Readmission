@@ -1,0 +1,30 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+
+<div class="container">
+  <div class="jumbotron" style="background-color:#1daeff !important;">
+    <h2 style="color:#fff;">Readmission Classifier</h2>
+  </div>
+</div>
+
+<div class="card text-center">
+  <div class="card-header"> Results</div>
+  <div class="card-body" style="background-color:pink;">
+    <h5 class="card-title">Readmission Classifier</h5>
+    <hr/>
+    <p class="card-text">
+      <div class="alert alert-danger" role="alert">{{ name }}</div>
+    </p>
+    <h1> {{ prediction }}</h1>
+
+  </div>
+
+<!-- Main ML Prediction Display Ends Here -->
+  <div class="card-footer text-muted">
+
+  </div>
+</div>
+
+
+
+{% endblock %}

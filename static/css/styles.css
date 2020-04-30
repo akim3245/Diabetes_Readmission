@@ -1,0 +1,11 @@
+h2, form{
+    border: 2px #eee solid;
+    text-align: center;
+    padding: 10px;
+}
+
+body{
+	font:15px/1.5 Arial, Helvetica,sans-serif;
+	padding: 0px;
+	background-color:#f4f3f3;
+}

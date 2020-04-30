@@ -1,0 +1,152 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+
+<div class="container">
+  <div class="jumbotron" style="background-color:#FC969D !important;">
+    <h2 style="color:#fff;">Readmission Classifier</h2>
+    <p style="color:#fff;">Using Machine Learning to Classify Diabetes Readmission</p>
+  </div>
+</div>
+
+
+<div class="panel-group">
+    <div class="panel panel-primary">
+      <div class="panel-heading" style="background-color:#FFE497 ">
+          Readmission Classifier
+      </div>
+        <div class="panel-body">
+
+<!-- Main Input For Receiving Query to our ML -->
+      	<form action="{{ url_for('predict')}}" method="POST">
+
+            <label for="gender">Gender: </label>
+            <select id="gender" name="gender">
+                <option value="none" selected disabled hidden>Select an Option</option>
+                <option value="1">Female</option>
+                <option value="0">Male</option>
+            </select>
+            <br>
+            <label for="age">Age: </label>
+            <select id="age" name="age">
+                <option value="none" selected disabled hidden>Select an Option</option>
+                <option value="1">[0-10)</option>
+                <option value="2">[10-20)</option>
+                <option value="3">[20-30)</option>
+                <option value="4">[30-40)</option>
+                <option value="5">[40-50)</option>
+                <option value="6">[50-60)</option>
+                <option value="7">[60-70)</option>
+                <option value="8">[70-80)</option>
+                <option value="9">[80-90)</option>
+                <option value="10">[90-100)</option>
+            </select>
+            <br>
+            <label for="num_medications">Number of Medications: </label>
+            <input type="number" id="num_medications" name="num_medications">
+            <br>
+            <label for="num_lab_procedures">Number of Lab Procedures: </label>
+            <input type="number" id='num_lab_procedures' name="num_lab_procedures">
+            <br>
+            <label for="num_lab_procedures">Number of Inpatient Visits: </label>
+            <input type="number" id='num_lab_procedures' name="number_inpatient">
+            <br>
+            <label for="number_outpatient">Number of Outpatient Visits:</label>
+            <input type="number" id="number_outpatient" name="number_outpatient">
+            <br>
+            <label for="number_emergency">Number of Emergency Visits:</label>
+            <input type="number" id='number_emergency' name="number_emergency">
+            <br>
+            <label for="diag_2">Diagnosis: </label>
+            <select id="diag_2" name="diag_2">
+                <option value="none" selected disabled hidden>Select an Option</option>
+                <option value="0">External Injury and Supplemental</option>
+                <option value="0">Infectious and Parasitic</option>
+                <option value="0">Neoplasms</option>
+                <option value="0">Thyroid</option>
+                <option value="0">Diabetes</option>
+                <option value="0">Nutritional, Metabolic, or Immunity</option>
+                <option value="0">Blood</option>
+                <option value="0">Mental</option>
+                <option value="0">Nervous</option>
+                <option value="1">Circulatory</option>
+                <option value="0">Respiratory</option>
+                <option value="0">Digestive</option>
+                <option value="0">Genitourinary</option>
+                <option value="0">Pregnancy</option>
+                <option value="0">Skin</option>
+                <option value="0">Musculoskeletal</option>
+                <option value="0">Congenital</option>
+                <option value="0">Perinatal</option>
+                <option value="0">Symptoms</option>
+                <option value="0">Injury and Poisoning</option>
+            </select>
+            <br>
+            <label for="insulin">Insulin:</label>
+            <select id="insulin" name="insulin">
+                <option value="none" selected disabled hidden>Select an Option</option>
+                <option value="1">Up</option>
+                <option value="1">Steady</option>
+                <option value="1">Down</option>
+                <option value="0">No</option>
+            </select>
+            <br>
+            <label for="time_in_hospital">Time in Hospital:</label>
+            <select id="time_in_hospital" name="time_in_hospital">
+                <option value="none" selected disabled hidden>Select an Option</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+            </select>
+            <br>
+            <label for="number_diagnoses">Number of Diagnoses: </label>
+            <input type="number" id='number_diagnoses' name="number_diagnoses">
+            <br>
+            <label for="metformin">Metformin:</label>
+            <select id="metformin" name="metformin">
+                <option value="none" selected disabled hidden>Select an Option</option>
+                <option value="1">Up</option>
+                <option value="1">Steady</option>
+                <option value="1">Down</option>
+                <option value="0">No</option>
+            </select>
+            <br>
+            <label for="num_procedures">Number of Procedures:</label>
+            <input type="number" id="num_procedures" name="num_procedures"> <br>
+            <label for="change">Change in Medications:</label>
+            <select id="change" name="change">
+                <option value="none" selected disabled hidden>Select an Option</option>
+                <option value="1">Ch</option>
+                <option value="0">No</option>
+            </select>
+            <br>
+			<button type="submit" class="btn btn-primary">Predict</button>
+			</form>
+
+<!-- Main Input For Receiving Query to our ML -->
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+
+{% block styles %}
+{{super()}} <!-- Allows Javascripts and other styles to be inclusive in bootstrap -->
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='css/styles.css')}}">
+{% endblock %}
