@@ -1,98 +1,100 @@
 {% extends "bootstrap/base.html" %}
 {% block content %}
-
-<div class="container">
-  <div class="jumbotron" style="background-color:#FC969D !important;">
-    <h2 style="color:#fff;">Readmission Classifier</h2>
-    <p style="color:#fff;">Using Machine Learning to Classify Diabetes Readmission</p>
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+<div class="container" style="width:100%;">
+  <div class="jumbotron" style="background-image: linear-gradient(to bottom, #80dfff , #99ccff); !important;">
+    <h2 style="color:#fff;">Diabetes Readmission Classifier</h2>
+    <p style="color:#fff;">Using Machine Learning to Classify Diabetes Readmission</p> <hr>
   </div>
 </div>
 
 
 <div class="panel-group">
     <div class="panel panel-primary">
-      <div class="panel-heading" style="background-color:#FFE497 ">
-          Readmission Classifier
+      <div class="panel-heading" style="background-color: #ffecb3; padding:64px 25px">
       </div>
-        <div class="panel-body">
-
+        <div id="one" class="panel-body">
 <!-- Main Input For Receiving Query to our ML -->
       	<form action="{{ url_for('predict')}}" method="POST">
 
             <label for="gender">Gender: </label>
-            <select id="gender" name="gender">
-                <option value="none" selected disabled hidden>Select an Option</option>
-                <option value="1">Female</option>
-                <option value="0">Male</option>
+            <select id="gender" name="gender" required>
+                <option value="" selected disabled hidden>Select an Option...</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
             </select>
             <br>
             <label for="age">Age: </label>
-            <select id="age" name="age">
-                <option value="none" selected disabled hidden>Select an Option</option>
-                <option value="1">[0-10)</option>
-                <option value="2">[10-20)</option>
-                <option value="3">[20-30)</option>
-                <option value="4">[30-40)</option>
-                <option value="5">[40-50)</option>
-                <option value="6">[50-60)</option>
-                <option value="7">[60-70)</option>
-                <option value="8">[70-80)</option>
-                <option value="9">[80-90)</option>
-                <option value="10">[90-100)</option>
+            <select class="select-css" id="age" name="age" required>
+                <option value="" selected disabled hidden>Select an Option...</option>
+                <option value=1>0-9 Years Old</option>
+                <option value=2>10-19 Years Old</option>
+                <option value=3>20-29 Years Old</option>
+                <option value=4>30-39 Years Old</option>
+                <option value=5>40-49 Years Old</option>
+                <option value=6>50-59 Years Old</option>
+                <option value=7>60-69 Years Old</option>
+                <option value=8>70-79 Years Old</option>
+                <option value=9>80-89 Years Old</option>
+                <option value=10>90+ Years Old</option>
             </select>
             <br>
             <label for="num_medications">Number of Medications: </label>
-            <input type="number" id="num_medications" name="num_medications">
+            <input type="number" id="num_medications" name="num_medications" placeholder="Example: 10..." required>
             <br>
             <label for="num_lab_procedures">Number of Lab Procedures: </label>
-            <input type="number" id='num_lab_procedures' name="num_lab_procedures">
+            <input type="number" id='num_lab_procedures' name="num_lab_procedures" placeholder="Example: 20..." required>
             <br>
             <label for="num_lab_procedures">Number of Inpatient Visits: </label>
-            <input type="number" id='num_lab_procedures' name="number_inpatient">
+            <input type="number" id='num_lab_procedures' name="number_inpatient" placeholder="Example: 30..." required>
             <br>
             <label for="number_outpatient">Number of Outpatient Visits:</label>
-            <input type="number" id="number_outpatient" name="number_outpatient">
+            <input type="number" id="number_outpatient" name="number_outpatient" placeholder="Example: 40..." required>
             <br>
             <label for="number_emergency">Number of Emergency Visits:</label>
-            <input type="number" id='number_emergency' name="number_emergency">
+            <input type="number" id='number_emergency' name="number_emergency" placeholder="Example: 50..." required>
             <br>
             <label for="diag_2">Diagnosis: </label>
-            <select id="diag_2" name="diag_2">
-                <option value="none" selected disabled hidden>Select an Option</option>
-                <option value="0">External Injury and Supplemental</option>
-                <option value="0">Infectious and Parasitic</option>
-                <option value="0">Neoplasms</option>
-                <option value="0">Thyroid</option>
-                <option value="0">Diabetes</option>
-                <option value="0">Nutritional, Metabolic, or Immunity</option>
-                <option value="0">Blood</option>
-                <option value="0">Mental</option>
-                <option value="0">Nervous</option>
-                <option value="1">Circulatory</option>
-                <option value="0">Respiratory</option>
-                <option value="0">Digestive</option>
-                <option value="0">Genitourinary</option>
-                <option value="0">Pregnancy</option>
-                <option value="0">Skin</option>
-                <option value="0">Musculoskeletal</option>
-                <option value="0">Congenital</option>
-                <option value="0">Perinatal</option>
-                <option value="0">Symptoms</option>
-                <option value="0">Injury and Poisoning</option>
+            <select class="select-css" id="diag_2" name="diag_2" required>
+                <option value="" selected disabled hidden>Select an Option...</option>
+                <option value="external injury and supplemental">External Injury and Supplemental</option>
+                <option value="infectious and parasitic">Infectious and Parasitic</option>
+                <option value="neoplasms">Neoplasms</option>
+                <option value="thyroid">Thyroid</option>
+                <option value="diabetes">Diabetes</option>
+                <option value="nutritional, metabolic, immunity">Nutritional, Metabolic, or Immunity</option>
+                <option value="blood">Blood</option>
+                <option value="mental">Mental</option>
+                <option value="nervous">Nervous</option>
+                <option value="circulatory">Circulatory</option>
+                <option value="respiratory">Respiratory</option>
+                <option value="digestive">Digestive</option>
+                <option value="genitourinary">Genitourinary</option>
+                <option value="pregnancy">Pregnancy</option>
+                <option value="skin">Skin</option>
+                <option value="musculoskeletal">Musculoskeletal</option>
+                <option value="congenital">Congenital</option>
+                <option value="perinatal">Perinatal</option>
+                <option value="symptoms">Symptoms</option>
+                <option value="injury and poisoning">Injury and Poisoning</option>
             </select>
             <br>
             <label for="insulin">Insulin:</label>
-            <select id="insulin" name="insulin">
-                <option value="none" selected disabled hidden>Select an Option</option>
-                <option value="1">Up</option>
-                <option value="1">Steady</option>
-                <option value="1">Down</option>
-                <option value="0">No</option>
+            <select class="select-css" id="insulin" name="insulin" required>
+                <option value="" selected disabled hidden>Select an Option...</option>
+                <option value="Up">Up</option>
+                <option value="Steady">Steady</option>
+                <option value="Down">Down</option>
+                <option value="No">No</option>
             </select>
             <br>
             <label for="time_in_hospital">Time in Hospital:</label>
-            <select id="time_in_hospital" name="time_in_hospital">
-                <option value="none" selected disabled hidden>Select an Option</option>
+            <select class="select-css" id="time_in_hospital" name="time_in_hospital" required>
+                <option value="" selected disabled hidden>Select an Option...</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -110,26 +112,27 @@
             </select>
             <br>
             <label for="number_diagnoses">Number of Diagnoses: </label>
-            <input type="number" id='number_diagnoses' name="number_diagnoses">
+            <input type="number" id='number_diagnoses' name="number_diagnoses" placeholder="Example: 60..." required>
             <br>
             <label for="metformin">Metformin:</label>
-            <select id="metformin" name="metformin">
-                <option value="none" selected disabled hidden>Select an Option</option>
-                <option value="1">Up</option>
-                <option value="1">Steady</option>
-                <option value="1">Down</option>
-                <option value="0">No</option>
+            <select class="select-css" id="metformin" name="metformin" required>
+                <option value="" selected disabled hidden>Select an Option...</option>
+                <option value="Up">Up</option>
+                <option value="Steady">Steady</option>
+                <option value="Down">Down</option>
+                <option value="No">No</option>
             </select>
             <br>
             <label for="num_procedures">Number of Procedures:</label>
-            <input type="number" id="num_procedures" name="num_procedures"> <br>
-            <label for="change">Change in Medications:</label>
-            <select id="change" name="change">
-                <option value="none" selected disabled hidden>Select an Option</option>
-                <option value="1">Ch</option>
-                <option value="0">No</option>
-            </select>
+            <input type="number" id="num_procedures" name="num_procedures" placeholder="Example: 70..." required>
             <br>
+            <label for="change">Change in Medications:</label>
+            <select class="select-css" id="change" name="change" required>
+                <option value="" selected disabled hidden>Select an Option...</option>
+                <option value="Ch">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <br><br>
 			<button type="submit" class="btn btn-primary">Predict</button>
 			</form>
 
@@ -139,7 +142,8 @@
         </div>
     </div>
 </div>
-
+</body>
+</html>
 
 
 
@@ -148,5 +152,5 @@
 {% block styles %}
 {{super()}} <!-- Allows Javascripts and other styles to be inclusive in bootstrap -->
 <link rel="stylesheet"
-      href="{{url_for('.static', filename='css/styles.css')}}">
+      href="{{url_for('static', filename='css/styles.css')}}">
 {% endblock %}

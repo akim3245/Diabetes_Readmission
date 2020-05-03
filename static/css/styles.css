@@ -1,11 +1,118 @@
-h2, form{
-    border: 2px #eee solid;
-    text-align: center;
+h2 {
     padding: 10px;
+    font-size: 45px;
+    font-weight: bolder;
 }
 
-body{
-	font:15px/1.5 Arial, Helvetica,sans-serif;
-	padding: 0px;
-	background-color:#f4f3f3;
+hr {
+    border-top: 1px solid;
+}
+
+.jumbotron>hr {
+    border-top-color: #747474;
+}
+
+form {
+    text-align: center;
+    padding: 30px;
+    border: 2px solid #cce6ff;
+    margin: 0px 100px;
+    background-color: #FFFAF0;
+    border-radius: 10px;
+    border-width: 10px;
+    border-left-width: 30px;
+    border-right-width:30px
+
+}
+
+select{
+    width:25%;
+    background-color: #FFF8AC;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 3px;
+    margin-bottom: 10px;
+    display: inline-block;
+    text-indent: 10px;
+    font-size: 15px;
+}
+
+select:hover {
+    background: #FFEDDA;
+}
+
+select:invalid {
+    color: gray;
+}
+
+input{
+    width:20%;
+    background-color: #FFF8AC;
+    padding: 3px;
+    margin-bottom: 10px;
+    border-radius:5px;
+    text-indent: 10px;
+    border-style: ridge;
+    font-size: 15px;
+}
+
+input:hover{
+    background: #FFEDDA;
+}
+
+label{
+    font-size:16px;
+}
+
+.btn{
+    display: inline-block;
+    padding: 8px 70px;
+    background-color: #ff8c66;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    border-color: grey;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.btn:hover {
+  color: aliceblue;
+  background-color: #0059b3;
+}
+
+.container .jumbotron, .container-fluid .jumbotron {
+    padding-right: 60px;
+    padding-left: 20px;
+    margin-bottom: 0px;
+}
+
+p {
+    padding-left: 50px;
+}
+
+.panel-group .panel-heading {
+    border-width: 0px;
+}
+
+.jumbotron{
+    padding-bottom: 150px;
+    margin-right: 20px;
+}
+
+.panel-heading {
+    position:relative;
+    bottom:140px;
+    left:250px;
+
+}
+
+#one.panel-body {
+    margin-top: -160px;
+    position:relative;
+    bottom:60px;
 }

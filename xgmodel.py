@@ -5,13 +5,14 @@ import pickle
 
 df = pd.read_csv('diabetic_data.csv')
 
-features = ['num_lab_procedures', 'num_medications',
-            'time_in_hospital', 'age',
-            'number_diagnoses', 'num_procedures',
-            'number_inpatient', 'number_outpatient',
-            'number_emergency', 'gender', 'change', 'insulin',
-            'metformin', 'not_diabetes_related',
-            'diag_2', 'circulatory', 'readmitted']
+features = ['age','num_medications','num_lab_procedures',
+            'number_inpatient', 'number_outpatient','insulin',
+            'time_in_hospital',
+            'number_diagnoses', 'metformin','num_procedures',
+            'change',
+            'number_emergency', 'gender',
+             'diag_2', 'circulatory',
+            'not_diabetes_related''readmitted']
 
 df = df.loc[:, features]
 
