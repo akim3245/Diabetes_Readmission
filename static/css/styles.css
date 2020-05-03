@@ -15,14 +15,14 @@ hr {
 form {
     text-align: center;
     padding: 30px;
-    border: 2px solid #cce6ff;
+    border: solid #cce6ff;
     margin: 0px 100px;
     background-color: #FFFAF0;
     border-radius: 10px;
-    border-width: 10px;
-    border-left-width: 30px;
-    border-right-width:30px
-
+    border-left-width: 50px;
+    border-right-width:50px;
+    border-top-width: 20px;
+    border-bottom-width: 20px;
 }
 
 select{
@@ -108,11 +108,11 @@ p {
     position:relative;
     bottom:140px;
     left:250px;
-
+    width: 80%;
 }
 
 #one.panel-body {
-    margin-top: -160px;
+    margin-top: -170px;
     position:relative;
     bottom:60px;
 }
