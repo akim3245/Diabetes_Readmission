@@ -36,6 +36,7 @@ select{
     display: inline-block;
     text-indent: 10px;
     font-size: 15px;
+    border-radius: 5px;
 }
 
 select:hover {
@@ -67,11 +68,11 @@ label{
 
 .btn{
     display: inline-block;
-    padding: 8px 70px;
-    background-color: #ff8c66;
+    padding: 10px 100px;
+    background-color: #E0607E;
     transition-duration: 0.4s;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     border-color: grey;
     border-style: solid;
@@ -83,6 +84,9 @@ label{
 .btn:hover {
   color: aliceblue;
   background-color: #0059b3;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .container .jumbotron, .container-fluid .jumbotron {
