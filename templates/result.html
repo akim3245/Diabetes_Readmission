@@ -1,21 +1,28 @@
 {% extends "bootstrap/base.html" %}
 {% block content %}
 
-<div class="container">
-  <div class="jumbotron" style="background-color:#FFBAA6 !important;">
-    <h2 style="color:#fff;">Readmission Classifier</h2>
+<div class="container" style="width:100%; padding:0px;">
+  <div class="jumbotron" style="background-image: linear-gradient(to bottom, #80dfff , #99ccff) !important;margin:0px">
+    <h2 style="color:#fff; text-align: center; font-size: 45px; font-weight: bold; letter-spacing:1px;
+    text-shadow: 1px 2px 24px gray;
+">Diabetes Readmission Classifier</h2>
+    <hr style="border-top-color: #747474; width:80%;">
   </div>
 </div>
 
-<div class="card text-center">
-  <div class="card-header"> Results</div>
-  <div class="card-body" style="background-color:#89D389;">
-    <h5 class="card-title">Readmission Classifier</h5>
-    <hr/>
+<div class="card text-center" style="background-color:#f2f2f2;padding-bottom:50px;">
+  <div class="card-header" style="font-size:20px;text-transform:uppercase; font-weight:
+  bold; background-color:black; color:white; margin:20px 0px; padding:10px; letter-spacing:2px;">Results</div>
+  <div class="card-body" style="background:white;margin:20px 250px; border: 10px solid #cce6ff; border-radius:14px">
     <p class="card-text">
-      <div class="alert alert-danger" role="alert">{{ name }}</div>
+      <div class="alert alert-danger" role="alert" style="font-size:20px;text-transform:uppercase;
+      background-color:#cce6ff; color:black;letter-spacing:1px;font-weight:bold;border:none;
+      margin-bottom:0px">Probability of Readmission:
+      </div>
     </p>
-    <h1> {{ prediction }}</h1>
+    <hr style="border-top:1px solid black;margin:0px">
+
+    <h1 style="margin:30px;padding:20px 10px;color:#ff9999; font-weight:bold;letter-spacing:1px;"> {{ prediction }} </h1>
 
   </div>
 
@@ -28,3 +35,4 @@
 
 
 {% endblock %}
+

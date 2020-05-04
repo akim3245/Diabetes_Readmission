@@ -8,7 +8,7 @@
 <div class="container" style="width:100%;">
   <div class="jumbotron" style="background-image: linear-gradient(to bottom, #80dfff , #99ccff); !important;">
     <h2 style="color:#fff;">Diabetes Readmission Classifier</h2>
-    <p style="color:#fff;">Using Machine Learning to Classify Diabetes Readmission</p> <hr>
+    <p class="usingml" style="color:#fff;">Using Machine Learning to Classify Diabetes Readmission</p> <hr>
   </div>
 </div>
 
@@ -20,7 +20,8 @@
         <div id="one" class="panel-body">
 <!-- Main Input For Receiving Query to our ML -->
       	<form action="{{ url_for('predict')}}" method="POST">
-
+            <p class="intro"> Fill out the following information to predict the probability
+                of being readmitted back into the hospital. </p>
             <label for="gender">Gender: </label>
             <select id="gender" name="gender" required>
                 <option value="" selected disabled hidden>Select an Option...</option>
@@ -44,19 +45,19 @@
             </select>
             <br>
             <label for="num_medications">Number of Medications: </label>
-            <input type="number" id="num_medications" name="num_medications" placeholder="Example: 10..." required>
+            <input type="number" id="num_medications" name="num_medications" placeholder="Enter a Number (example: 10...)" required>
             <br>
             <label for="num_lab_procedures">Number of Lab Procedures: </label>
-            <input type="number" id='num_lab_procedures' name="num_lab_procedures" placeholder="Example: 20..." required>
+            <input type="number" id='num_lab_procedures' name="num_lab_procedures" placeholder="Enter a Number (example: 20...)" required>
             <br>
             <label for="num_lab_procedures">Number of Inpatient Visits: </label>
-            <input type="number" id='num_lab_procedures' name="number_inpatient" placeholder="Example: 30..." required>
+            <input type="number" id='num_lab_procedures' name="number_inpatient" placeholder="Enter a Number (example: 30...)" required>
             <br>
             <label for="number_outpatient">Number of Outpatient Visits:</label>
-            <input type="number" id="number_outpatient" name="number_outpatient" placeholder="Example: 40..." required>
+            <input type="number" id="number_outpatient" name="number_outpatient" placeholder="Enter a Number (example: 40...)" required>
             <br>
             <label for="number_emergency">Number of Emergency Visits:</label>
-            <input type="number" id='number_emergency' name="number_emergency" placeholder="Example: 50..." required>
+            <input type="number" id='number_emergency' name="number_emergency" placeholder="Enter a Number (example: 50...)" required>
             <br>
             <label for="diag_2">Diagnosis: </label>
             <select class="select-css" id="diag_2" name="diag_2" required>
@@ -95,24 +96,24 @@
             <label for="time_in_hospital">Time in Hospital:</label>
             <select class="select-css" id="time_in_hospital" name="time_in_hospital" required>
                 <option value="" selected disabled hidden>Select an Option...</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
+                <option value="1">1 day</option>
+                <option value="2">2 days</option>
+                <option value="3">3 days</option>
+                <option value="4">4 days</option>
+                <option value="5">5 days</option>
+                <option value="6">6 days</option>
+                <option value="7">7 days</option>
+                <option value="8">8 days</option>
+                <option value="9">9 days</option>
+                <option value="10">10 days</option>
+                <option value="11">11 days</option>
+                <option value="12">12 days</option>
+                <option value="13">13 days</option>
+                <option value="14">14+ days</option>
             </select>
             <br>
             <label for="number_diagnoses">Number of Diagnoses: </label>
-            <input type="number" id='number_diagnoses' name="number_diagnoses" placeholder="Example: 60..." required>
+            <input type="number" id='number_diagnoses' name="number_diagnoses" placeholder="Enter a Number (example: 60...)" required>
             <br>
             <label for="metformin">Metformin:</label>
             <select class="select-css" id="metformin" name="metformin" required>
@@ -124,7 +125,7 @@
             </select>
             <br>
             <label for="num_procedures">Number of Procedures:</label>
-            <input type="number" id="num_procedures" name="num_procedures" placeholder="Example: 70..." required>
+            <input type="number" id="num_procedures" name="num_procedures" placeholder="Enter a Number (example: 70...)" required>
             <br>
             <label for="change">Change in Medications:</label>
             <select class="select-css" id="change" name="change" required>
