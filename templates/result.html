@@ -1,38 +1,39 @@
 {% extends "bootstrap/base.html" %}
 {% block content %}
+<!doctype html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+</head>
+<body>
+ <div class="head-container">
+   <h2 class="head-text">Diabetes Readmission Classifier</h2>
+   <hr style="margin:3px 13em 1em;">
+ </div>
 
-<div class="container" style="width:100%; padding:0px;">
-  <div class="jumbotron" style="background-image: linear-gradient(to bottom, #80dfff , #99ccff) !important;margin:0px">
-    <h2 style="color:#fff; text-align: center; font-size: 45px; font-weight: bold; letter-spacing:1px;
-    text-shadow: 1px 2px 24px gray;
-">Diabetes Readmission Classifier</h2>
-    <hr style="border-top-color: #747474; width:80%;">
-  </div>
-</div>
 
-<div class="card text-center" style="background-color:#f2f2f2;padding-bottom:50px;">
-  <div class="card-header" style="font-size:20px;text-transform:uppercase; font-weight:
-  bold; background-color:black; color:white; margin:20px 0px; padding:10px; letter-spacing:2px;">Results</div>
-  <div class="card-body" style="background:white;margin:20px 250px; border: 10px solid #cce6ff; border-radius:14px">
-    <p class="card-text">
-      <div class="alert alert-danger" role="alert" style="font-size:20px;text-transform:uppercase;
-      background-color:#cce6ff; color:black;letter-spacing:1px;font-weight:bold;border:none;
-      margin-bottom:0px">Probability of Readmission:
-      </div>
-    </p>
-    <hr style="border-top:1px solid black;margin:0px">
+ <div class="results-container">
+   <p class="card-text">
+   <div class="results-text-title" role="alert"> RESULTS: </div>
+   </p>
+   <hr style="border-top:1px solid black;margin:0px">
+   <h2 class="results-body-text">
+        Patient has a
+     <p class="prediction-answer">{{ prediction }}%</p>
+        chance of being readmitted</h2>
+   <hr style="border-top:1px solid black;margin-bottom:10px">
+ </div>
 
-    <h1 style="margin:30px;padding:20px 10px;color:#ff9999; font-weight:bold;letter-spacing:1px;"> {{ prediction }} </h1>
-
-  </div>
-
-<!-- Main ML Prediction Display Ends Here -->
-  <div class="card-footer text-muted">
-
-  </div>
-</div>
-
+</body>
+</html>
 
 
 {% endblock %}
-
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css/resultstyles.css')}}">
+{% endblock %}
