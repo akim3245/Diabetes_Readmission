@@ -10,7 +10,7 @@ Python Flask Web Application
 ### Technologies
 * Python
 * Pandas
-* Scikit-learn library 
+* Scikit-Learn Library 
 * Jupyter Notebook
 * HTML
 * CSS
@@ -28,19 +28,18 @@ A diabetes dataset was used that consists of information from 130 US hospitals f
 Jupyter Notebook was used to run Python code. Data was first explored and analyzed to check for
 trends and data visualizations (ie. matplotlib, plotly, sns), then preprocessed for clean-up and some tweaking and 
 engineering to have it ready for machine learning. Data was split then trained by several algorithms. XGBoost gave 
-the best score and was further used to extract the top 14 features. Pre-trained data was deployed using Flask to make the prediction 
-probability of readmission. 
+the best score and was further used to extract the top 14 features. Pre-trained data was deployed using Flask to make the prediction probability of readmission. 
  
 
 ## Getting Started
 
 
-#### 1. Create a Virtual Environment
+#### 1. Create a Virtual Environment (optional but recommended)
 
    Install Anaconda here: https://www.anaconda.com/products/individual. 
    
    Once Anaconda is installed, create a new virtual environment called 
-   ```new_env```, then switch out of the base environment and into the ```new_env```:
+   ```new_env```, then switch out of the base environment and into ```new_env```. Also, make sure to use python3:
    
    ```
     $ conda create -n new_env python=3
