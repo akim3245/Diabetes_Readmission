@@ -35,7 +35,7 @@ probability of readmission.
 ## Getting Started
 
 
-####1. Create a Virtual Environment
+#### 1. Create a Virtual Environment
 
    Install Anaconda here: https://www.anaconda.com/products/individual. 
    
@@ -47,7 +47,7 @@ probability of readmission.
     $ conda activate new_env
    ```
    
-####2. Install Required Packages
+#### 2. Install Required Packages
    Use the **requirements.txt** file attached in this repository to install the necessary packages to run the app.
 
 
@@ -55,7 +55,7 @@ probability of readmission.
    (new_env)$ pip install -r requirements.txt
    ```
    
-####3. Run the App
+#### 3. Run the App
     
    ```
    $ python app.py
