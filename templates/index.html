@@ -3,145 +3,172 @@
 <!doctype html>
 <html>
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Great Vibes" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&family=Nunito:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="container" style="width:100%;">
-  <div class="jumbotron" style="background-image: linear-gradient(to bottom, #80dfff , #99ccff); !important;">
-    <h2 style="color:#fff;">Diabetes Readmission Classifier</h2>
-    <p class="usingml" style="color:#fff;">Using Machine Learning to Classify Diabetes Readmission</p> <hr>
-  </div>
+<div id="homepage" class="section header-templates">
+    <div class="bg-text">
+        <h1 class="homepage-text">Diabetes Readmission Classifier</h1>
+        <h2 class="machinelearning">Using Machine Learning to Classify Diabetes Readmission</h2>
+    </div>
+
 </div>
 
+<div class="about">
+    <h4 class="welcome">Welcome</h4>
+    <h4 class="brief-description">This web app is for those who have previously been admitted to the hospital for
+        diabetes management.
+        <br>
+        This Diabetes Readmission Classifier predicts the probability of a patient being
+        readmitted back into the hospital using information such as gender, age, and type of medications.
+    </h4>
 
-<div class="panel-group">
-    <div class="panel panel-primary">
-      <div class="panel-heading" style="background-color: #ffecb3; padding:74px 20px">
-      </div>
-        <div id="one" class="panel-body">
+</div>
+
+<div id="classifier" class="form-container">
 <!-- Main Input For Receiving Query to our ML -->
-      	<form action="{{ url_for('predict')}}" method="POST">
-            <p class="intro"> Fill out the following information to predict the probability
-                of being readmitted back into the hospital. </p>
-            <label for="gender">Gender: </label>
-            <select id="gender" name="gender" required>
-                <option value="" selected disabled hidden>Select an Option...</option>
-                <option value="Female">Female</option>
-                <option value="Male">Male</option>
-            </select>
-            <br>
-            <label for="age">Age: </label>
-            <select class="select-css" id="age" name="age" required>
-                <option value="" selected disabled hidden>Select an Option...</option>
-                <option value=1>0-9 Years Old</option>
-                <option value=2>10-19 Years Old</option>
-                <option value=3>20-29 Years Old</option>
-                <option value=4>30-39 Years Old</option>
-                <option value=5>40-49 Years Old</option>
-                <option value=6>50-59 Years Old</option>
-                <option value=7>60-69 Years Old</option>
-                <option value=8>70-79 Years Old</option>
-                <option value=9>80-89 Years Old</option>
-                <option value=10>90+ Years Old</option>
-            </select>
-            <br>
-            <label for="num_medications">Number of Medications: </label>
-            <input type="number" id="num_medications" name="num_medications" placeholder="Enter a Number (example: 10...)" required>
-            <br>
-            <label for="num_lab_procedures">Number of Lab Procedures: </label>
-            <input type="number" id='num_lab_procedures' name="num_lab_procedures" placeholder="Enter a Number (example: 20...)" required>
-            <br>
-            <label for="num_lab_procedures">Number of Inpatient Visits: </label>
-            <input type="number" id='num_lab_procedures' name="number_inpatient" placeholder="Enter a Number (example: 30...)" required>
-            <br>
-            <label for="number_outpatient">Number of Outpatient Visits:</label>
-            <input type="number" id="number_outpatient" name="number_outpatient" placeholder="Enter a Number (example: 40...)" required>
-            <br>
-            <label for="number_emergency">Number of Emergency Visits:</label>
-            <input type="number" id='number_emergency' name="number_emergency" placeholder="Enter a Number (example: 50...)" required>
-            <br>
-            <label for="diag_2">Diagnosis: </label>
-            <select class="select-css" id="diag_2" name="diag_2" required>
-                <option value="" selected disabled hidden>Select an Option...</option>
-                <option value="external injury and supplemental">External Injury and Supplemental</option>
-                <option value="infectious and parasitic">Infectious and Parasitic</option>
-                <option value="neoplasms">Neoplasms</option>
-                <option value="thyroid">Thyroid</option>
-                <option value="diabetes">Diabetes</option>
-                <option value="nutritional, metabolic, immunity">Nutritional, Metabolic, or Immunity</option>
-                <option value="blood">Blood</option>
-                <option value="mental">Mental</option>
-                <option value="nervous">Nervous</option>
-                <option value="circulatory">Circulatory</option>
-                <option value="respiratory">Respiratory</option>
-                <option value="digestive">Digestive</option>
-                <option value="genitourinary">Genitourinary</option>
-                <option value="pregnancy">Pregnancy</option>
-                <option value="skin">Skin</option>
-                <option value="musculoskeletal">Musculoskeletal</option>
-                <option value="congenital">Congenital</option>
-                <option value="perinatal">Perinatal</option>
-                <option value="symptoms">Symptoms</option>
-                <option value="injury and poisoning">Injury and Poisoning</option>
-            </select>
-            <br>
-            <label for="insulin">Insulin:</label>
-            <select class="select-css" id="insulin" name="insulin" required>
-                <option value="" selected disabled hidden>Select an Option...</option>
-                <option value="Up">Up</option>
-                <option value="Steady">Steady</option>
-                <option value="Down">Down</option>
-                <option value="No">No</option>
-            </select>
-            <br>
-            <label for="time_in_hospital">Time in Hospital:</label>
-            <select class="select-css" id="time_in_hospital" name="time_in_hospital" required>
-                <option value="" selected disabled hidden>Select an Option...</option>
-                <option value="1">1 day</option>
-                <option value="2">2 days</option>
-                <option value="3">3 days</option>
-                <option value="4">4 days</option>
-                <option value="5">5 days</option>
-                <option value="6">6 days</option>
-                <option value="7">7 days</option>
-                <option value="8">8 days</option>
-                <option value="9">9 days</option>
-                <option value="10">10 days</option>
-                <option value="11">11 days</option>
-                <option value="12">12 days</option>
-                <option value="13">13 days</option>
-                <option value="14">14+ days</option>
-            </select>
-            <br>
-            <label for="number_diagnoses">Number of Diagnoses: </label>
-            <input type="number" id='number_diagnoses' name="number_diagnoses" placeholder="Enter a Number (example: 60...)" required>
-            <br>
-            <label for="metformin">Metformin:</label>
-            <select class="select-css" id="metformin" name="metformin" required>
-                <option value="" selected disabled hidden>Select an Option...</option>
-                <option value="Up">Up</option>
-                <option value="Steady">Steady</option>
-                <option value="Down">Down</option>
-                <option value="No">No</option>
-            </select>
-            <br>
-            <label for="num_procedures">Number of Procedures:</label>
-            <input type="number" id="num_procedures" name="num_procedures" placeholder="Enter a Number (example: 70...)" required>
-            <br>
-            <label for="change">Change in Medications:</label>
-            <select class="select-css" id="change" name="change" required>
-                <option value="" selected disabled hidden>Select an Option...</option>
-                <option value="Ch">Yes</option>
-                <option value="No">No</option>
-            </select>
-            <br><br>
-			<button type="submit" class="btn btn-primary">Predict</button>
-			</form>
+    <form action="{{ url_for('predict')}}" method="POST">
+        <h1 class="formtitle"> Readmission Classifier </h1>
+        <br>
 
-<!-- Main Input For Receiving Query to our ML -->
+        <h4 class="general">GENERAL INFORMATION</h4>
+        <hr class="form-separator">
+        <label for="gender">Gender: </label>
+        <select id="gender" name="gender" required>
+            <option value="" selected disabled hidden>Select an Option...</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+        </select>
+        <br>
+        <label for="age">Age: </label>
+        <select class="select-css" id="age" name="age" required>
+            <option value="" selected disabled hidden>Select an Option...</option>
+            <option value=1>0-9 Years Old</option>
+            <option value=2>10-19 Years Old</option>
+            <option value=3>20-29 Years Old</option>
+            <option value=4>30-39 Years Old</option>
+            <option value=5>40-49 Years Old</option>
+            <option value=6>50-59 Years Old</option>
+            <option value=7>60-69 Years Old</option>
+            <option value=8>70-79 Years Old</option>
+            <option value=9>80-89 Years Old</option>
+            <option value=10>90+ Years Old</option>
+        </select>
+        <br>
+        <label for="time_in_hospital">Length of Stay in the Hospital:</label>
+        <select class="select-css" id="time_in_hospital" name="time_in_hospital" required>
+            <option value="" selected disabled hidden>Select an Option...</option>
+            <option value="1">1 day</option>
+            <option value="2">2 days</option>
+            <option value="3">3 days</option>
+            <option value="4">4 days</option>
+            <option value="5">5 days</option>
+            <option value="6">6 days</option>
+            <option value="7">7 days</option>
+            <option value="8">8 days</option>
+            <option value="9">9 days</option>
+            <option value="10">10 days</option>
+            <option value="11">11 days</option>
+            <option value="12">12 days</option>
+            <option value="13">13 days</option>
+            <option value="14">14+ days</option>
+        </select>
+        <br>
+        <label for="num_lab_procedures">Number of Lab Procedures: </label>
+        <input type="number" min="0" max="140" id='num_lab_procedures' name="num_lab_procedures"
+               placeholder="###" required><span style="padding-left: 3px; font-size:12px;">*Limit: 140</span>
+        <br>
+        <label for="num_procedures">Number of Procedures <span style="font-weight:400; font-style:italic;
+        font-size:12px;">(other than lab tests)</span>:</label>
+        <input type="number" min="0" max="10" id="num_procedures" name="num_procedures"
+               placeholder="###" required><span style="padding-left: 3px; font-size:12px;">*Limit: 10</span>
+        <br>
+        <label for="diag_2">Secondary Diagnosis: </label>
+        <select class="select-css" id="diag_2" name="diag_2" style="width: 50%;margin-top: 4px;" required>
+            <option value="" selected disabled hidden>Select an Option...</option>
+            <option value="external injury and supplemental">External Causes of Injury / Supplemental Classification</option>
+            <option value="infectious and parasitic">Infectious and Parasitic Diseases</option>
+            <option value="neoplasms">Neoplasms</option>
+            <option value="thyroid">Disorders of Thyroid Gland</option>
+            <option value="diabetes">Diabetes Mellitus</option>
+            <option value="nutritional, metabolic, immunity">Other Endocrine / Nutritional / Metabolic / Immunity Disorders</option>
+            <option value="blood">Diseases of the Blood / Blood-forming Organs</option>
+            <option value="mental">Mental Disorders</option>
+            <option value="nervous">Diseases of the Nervous System / Sense Organs</option>
+            <option value="circulatory">Diseases of the Circulatory System</option>
+            <option value="respiratory">Diseases of the Respiratory System</option>
+            <option value="digestive">Diseases of the Digestive System</option>
+            <option value="genitourinary">Diseases of the Genitourinary System</option>
+            <option value="pregnancy">Complications of Pregnancy / Childbirth / Puerperium</option>
+            <option value="skin">Diseases of the Skin / Subcutaneous Tissue</option>
+            <option value="musculoskeletal">Diseases of the Musculoskeletal System / Connective Tissue</option>
+            <option value="congenital">Congenital Anomalies</option>
+            <option value="perinatal">Conditions originating in the Perinatal Period</option>
+            <option value="symptoms">Symptoms / Signs / Ill-defined Conditions</option>
+            <option value="injury and poisoning">Injury / Poisoning</option>
+        </select>
+        <br>
+        <label for="number_diagnoses">Number of Diagnoses: </label>
+        <input type="number" min="0" max="20" id='number_diagnoses' name="number_diagnoses"
+               placeholder="###" required><span style="padding-left: 3px; font-size:12px;">*Limit: 20</span>
+        <br>
 
+        <h4 class="medications">VISITS</h4>
+        <hr class="form-separator">
+        <label for="number_inpatient">Number of Inpatient Visits: </label>
+        <input type="number" min="0" max="30" id='number_inpatient'  name="number_inpatient"
+               placeholder="###" required><span style="padding-left: 3px; font-size:12px;">*Limit: 30</span>
+        <br>
+        <label for="number_outpatient">Number of Outpatient Visits:</label>
+        <input type="number" min="0" max="60" id="number_outpatient" name="number_outpatient"
+               placeholder="###" required><span style="padding-left: 3px; font-size:12px;">*Limit: 60</span>
+        <br>
+        <label for="number_emergency">Number of Emergency Visits:</label>
+        <input type="number" min="0" max="80" id='number_emergency' name="number_emergency"
+               placeholder="###" required><span style="padding-left: 3px; font-size:12px;">*Limit: 80</span>
+        <br>
 
-        </div>
-    </div>
+        <h4 class="medications">MEDICATIONS</h4>
+        <hr class="form-separator">
+        <label for="change">Change in Medications:</label>
+        <select class="select-css" id="change" name="change" required>
+            <option value="" selected disabled hidden>Select an Option...</option>
+            <option value="Ch">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+        <label for="num_medications">Number of Medications administered:</label>
+        <input type="number" min="0" max="85" id="num_medications" name="num_medications"
+               placeholder="###" required><span style="padding-left: 3px; font-size:12px;">*Limit: 85</span>
+        <br>
+        <label for="insulin">Insulin:</label>
+        <select class="select-css" id="insulin" name="insulin" required>
+            <option value="" selected disabled hidden>Select an Option...</option>
+            <option value="Up">Up - Dosage was increased</option>
+            <option value="Steady">Steady - Dosage did not change</option>
+            <option value="Down">Down - Dosage was decreased</option>
+            <option value="No">Insulin was not prescribed</option>
+        </select>
+        <br>
+        <label for="metformin">Metformin:</label>
+        <select class="select-css" id="metformin" name="metformin" required>
+            <option value="" selected disabled hidden>Select an Option...</option>
+            <option value="Up">Up - Dosage was increased</option>
+            <option value="Steady">Steady - Dosage did not change</option>
+            <option value="Down">Down - Dosage was decreased</option>
+            <option value="No">Metformin was not prescribed</option>
+        </select>
+        <br><br><br>
+
+        <button type="submit" class="btn btn-primary">Predict</button>
+    </form>
+</div>
+
+<div class="footer">
+    <p class="madeby">2020, created by <span class="ariel">ariel</span></p>
 </div>
 </body>
 </html>
@@ -151,7 +178,7 @@
 {% endblock %}
 
 {% block styles %}
-{{super()}} <!-- Allows Javascripts and other styles to be inclusive in bootstrap -->
+{{super()}}
 <link rel="stylesheet"
       href="{{url_for('static', filename='css/styles.css')}}">
 {% endblock %}

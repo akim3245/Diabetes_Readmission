@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, jsonify
+from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap
 import pandas as pd
 import pickle
@@ -78,9 +78,10 @@ def predict():
                     'Female']
 
     prediction_proba = loaded_model.predict_proba(data)
-    prediction = (prediction_proba[0])[1]
+    prediction = (prediction_proba[0])[1] * 100
+    prediction = round(prediction, 2)
 
-    return render_template('result.html', prediction=prediction * 100)
+    return render_template('result.html', prediction=prediction)
 
 
 if __name__ == '__main__':
