@@ -1,0 +1,74 @@
+body {
+    background: url("https://images.unsplash.com/photo-1516541196182-6bdb0516ed27?ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80");
+    background-size: cover;
+    background-position: center;
+}
+
+.head-container {
+    background-image:linear-gradient(to bottom, #caf2ff , #99cbff) !important;
+    margin:0px;
+    padding:45px;"
+ }
+
+ h2.head-text {
+    color:#fff;
+    text-align: center;
+    font-size: 41px;
+    letter-spacing:1px;
+    text-shadow: 1px 2px 8px #155373;
+    text-transform:uppercase;margin:0;
+}
+
+.results-container {
+    background:white;
+    margin:20px 250px;
+    border: 10px solid #cce6ff;
+    border-radius:10px;
+    text-align: center;
+}
+
+.results-text-title {
+    font-size:18px;
+    text-transform:uppercase;
+    background-color:#cce6ff;
+    color:black;letter-spacing:1px;
+    font-weight:bold;
+    border:none;
+    margin-bottom:0px;
+    font-family:'Jost', sans-serif;
+    padding: 15px;
+}
+
+h2.results-body-text {
+    margin:30px;
+    padding:20px 10px;
+    color:black;
+    font-weight:bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+p.prediction-answer {
+    color:#ff9999;
+    font-size:35px;
+    padding:20px;
+    margin:0;
+}
+
+.start-over {
+    text-align: center;
+    padding: 1px 0;
+    border: solid 1px;
+    background: #87868669;
+    margin: 0 42em 2em;
+    font-family: monospace;
+}
+
+a {
+    color: #ffffff;
+    text-shadow: 1px 1px 8px #535454;
+    font-size: 15px;
+}
+
+a:hover {
+    color: #f4ec89;
+}
