@@ -11,6 +11,9 @@ Bootstrap(app)
 def home():
     return render_template('index.html')
 
+@app.route('/#classifier', methods=['GET'])
+def classifier():
+    return render_template('index.html', _anchor="classifier")
 
 @app.route('/predict', methods=['POST'])
 def predict():

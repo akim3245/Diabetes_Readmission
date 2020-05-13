@@ -53,3 +53,22 @@ p.prediction-answer {
     padding:20px;
     margin:0;
 }
+
+.start-over {
+    text-align: center;
+    padding: 1px 0;
+    border: solid 1px;
+    background: #87868669;
+    margin: 0 42em 2em;
+    font-family: monospace;
+}
+
+a {
+    color: #ffffff;
+    text-shadow: 1px 1px 8px #535454;
+    font-size: 15px;
+}
+
+a:hover {
+    color: #f4ec89;
+}
