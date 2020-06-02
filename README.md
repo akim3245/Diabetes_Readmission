@@ -32,16 +32,16 @@ engineering to have it ready for machine learning.
 Overall, the dataset was relatively balanced across several features. The graphs below show a count plot of gender,
  patients prescribed with insulin, and whether patients were readmitted or not.
 
-![Screenshot](gender.png?raw=true)
+[![gender.png](https://i.postimg.cc/kMQ3JxJR/gender.png)](https://postimg.cc/Lh80vgZm)
 
-![Screenshot](insulin.png?raw=true)
+[![insulin.png](https://i.postimg.cc/YSHQHKbW/insulin.png)](https://postimg.cc/LJxJt7d9)
 
-![Screenshot](readmitted.png?raw=true)
+[![readmitted.png](https://i.postimg.cc/gkxVyKxn/readmitted.png)](https://postimg.cc/GH1TdGJC)
 
 Most readmitted patients were 50-90 years old.
 Even within different age groups, there was a balanced distribution of patients that were readmitted and not readmitted.
 
-![Screenshot](age_re.png?raw=true)
+[![age-re.png](https://i.postimg.cc/cCbQyvbx/age-re.png)](https://postimg.cc/hQVJVtn6)
 
 ### Feature Engineering
 Two columns were created to improve the model. 
@@ -76,18 +76,18 @@ Top Features:
 * f9 - Metformin
 * f99 - Diagnosis/Disease is not Diabetes Related
 
-![Screenshot](feature.png?raw=true)
+[![feature.png](https://i.postimg.cc/SR3z1wnj/feature.png)](https://postimg.cc/9wPMrgtj)
 
 ### Results
 To test the model, a random sample (shown below) from the holdout set was used 
 to predict the probability of readmission status. 
 
-![Screenshot](sample_data.png?raw=true)
+[![sample-data.png](https://i.postimg.cc/SNY9YNP9/sample-data.png)](https://postimg.cc/svyxtysf)
 
 The model was given the above sample information without the last line which shows the true readmission answer and produced 
 the following result.
 
-![Screenshot](test.png?raw=true)
+[![test.png](https://i.postimg.cc/52wFpKbN/test.png)](https://postimg.cc/Hrkxk2rf)
 
 The readmission status was predicted correctly for this sample with 
 33.74% chance of being readmitted and 66.26% chance of not being readmitted.
