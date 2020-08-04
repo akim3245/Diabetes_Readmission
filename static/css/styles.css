@@ -138,6 +138,8 @@ select, input {
     border-radius: 5px;
     margin-left:20px;
     font-family: sans-serif;
+    border-width:1px;
+    border-color:#607d8b;
 }
 
 .btn {
